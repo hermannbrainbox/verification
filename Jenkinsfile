@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Récupérer les fichiers du dépôt Git
-                git branch: 'master', url: 'https://github.com/votre-repository.git'
+                git branch: 'master', url: 'https://github.com/hermannbrainbox/verification.git'
             }
         }
         
