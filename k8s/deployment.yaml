@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment       # Nom du déploiement
+  labels:
+    app: my-app                  # Label pour le déploiement
+spec:
+  replicas: 1                    # Nombre de réplicas (instances de l'application)
+  selector:
+    matchLabels:
+      app: my-app                # Le label qui correspond aux pods créés
+  template:
+    metadata:
+      labels:
+        app: my-app              # Le label pour les pods
+    spec:
+      containers:
+        - name: my-app-container # Nom du conteneur
+          image: mydockerhub/my-app-image:latest # Nom de l'image Docker construite
+          ports:
+            - containerPort: 8080  # Port utilisé dans le conteneur
